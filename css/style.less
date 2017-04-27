@@ -9,6 +9,7 @@ body {
     font-size: 16px;
     letter-spacing: 0.07em;
     font-weight: normal;
+    color: #434343;
 }
 
 .container {
@@ -24,7 +25,8 @@ ul {
 }
 
 a {
-    text-decoration: none
+    text-decoration: none;
+    color: #434343;
 }
 
 header {
@@ -51,6 +53,14 @@ header {
                 padding: 10px 0;
                 a {
                     color: #434343;
+                    opacity: 0.8;
+                    transition: 0.2s;
+                    &:hover {
+                        opacity: 1;
+                    }
+                    &:active {
+                        opacity: 0.6;
+                    }
                 }
             }
         }
@@ -77,8 +87,16 @@ header {
                     background-color: #f0626e;
                 }
                 a {
+                    padding: 35px 20px;
                     color: white;
                     opacity: 0.8;
+                    transition: 0.2s;
+                    &:hover {
+                        opacity: 1;
+                    }
+                    &:active {
+                        opacity: 0.6;
+                    }
                 }
             }
         }
@@ -97,9 +115,22 @@ header {
         width: 946px;
         li {
             padding: 27px 0px;
+            transition: 0.1s;
+            cursor: pointer;
+            &:hover {
+                background-color: white;
+            }
+            &:hover a {
+                color: #f16f7a;
+            }
+            &:active a {
+                opacity: 0.5;
+            }
             a {
+                padding: 27px 15px;
                 color: white;
                 opacity: 0.8;
+                transition: 0.3;
             }
         }
     }
@@ -307,7 +338,58 @@ main {
         justify-content: space-between;
         .product-pic {
             width: 270px;
+            outline: 1px solid lightgray;
+            h3 {
+                margin-top: 7px;
+                margin-left: 14px;
+                font-size: 18px;
+                color: #434343;
+            }
+            p {
+                margin-left: 14px;
+                margin-bottom: 7px;
+                font-size: 13px;
+                color: #f0626e;
+            }
+            span {
+                display: inline-block;
+                padding: 10px 14px;
+                font-size: 24px;
+                background-color: #f0626e;
+                color: white;
+            }
+            .button-pay {
+                display: flex;
+                outline: 1px solid lightgray;
+                a {
+                    display: inline-block;
+                    width: 54px;
+                    height: 52px;
+                    margin: 0;
+                }
+                .center {
+                    outline: 1px solid lightgray;
+                }
+            }
         }
+    }
+}
+
+.who-we {
+    div {
+        border-bottom: 1px solid #b9b9b9;
+        margin-bottom: 28px;
+        h2 {
+            margin-bottom: -1px;
+            margin-left: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f0626e;
+            font-size: 30px;
+            color: #00a1be;
+        }
+    }
+    p {
+        margin: 20px 25px;
     }
 }
 
@@ -320,35 +402,117 @@ main {
         display: flex;
         justify-content: space-between;
         width: 100%;
+        margin-bottom: 30px;
         a {
             width: 370px;
             text-align: center;
             background-color: #434343;
+            opacity: 0.9;
+            transition: 0.2s;
+            &:hover {
+                opacity: 1;
+            }
             &:nth-child(2) {
                 background-color: #05aecc;
+                opacity: 0.9;
+                transition: 0.2s;
+                &:hover {
+                    opacity: 1;
+                }
             }
             &:nth-child(3) {
                 background-color: #f0626e;
+                opacity: 0.9;
+                transition: 0.2s;
+                &:hover {
+                    opacity: 1;
+                }
             }
         }
     }
     .btn {
-        margin-top: 10px;
-        padding: 10px 50px;
+        width: 648px;
+        padding: 14px 0px;
         background-color: #05aecc;
+        text-align: center;
+        color: white;
+        opacity: 0.8;
+        transition: 0.2s;
+        &:hover {
+            opacity: 1;
+        }
+        &:active {
+            opacity: 0.6;
+        }
     }
 }
 
 .footer-up {
     display: flex;
     justify-content: space-between;
+    border-top: 1px solid #b9b9b9;
+    border-bottom: 1px solid #b9b9b9;
     div {
         display: flex;
         flex-direction: column;
+        margin-bottom: 30px;
+        h2 {
+            margin: 38px 0;
+            text-transform: uppercase;
+            font-size: 25px;
+        }
+        a {
+            margin-bottom: 10px;
+            font-size: 16px;
+            opacity: 0.8;
+            transition: 0.1s;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+    .signup {
+        .news {
+            p {
+                padding: 25px 100px;
+                border: 1px solid lightgray;
+                text-transform: uppercase;
+            }
+            .btn-news {
+                padding: 14px 0px;
+                background-color: #05aecc;
+                text-align: center;
+                text-transform: uppercase;
+                color: white;
+                opacity: 0.8;
+                transition: 0.2s;
+                &:hover {
+                    opacity: 1;
+                }
+                &:active {
+                    opacity: 0.6;
+                }
+            }
+        }
+        .social {
+            display: flex;
+            flex-direction: row;
+            a {
+                width: 54px;
+                height: 54px;
+                outline: 1px solid red;
+                margin-right: 10px;
+            }
+        }
     }
 }
 
 .footer-down {
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
+    border-bottom: 1px solid #b9b9b9;
+    p {
+        padding: 20px 0;
+    }
 }
