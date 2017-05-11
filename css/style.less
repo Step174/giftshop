@@ -99,11 +99,42 @@ header {
                     }
                 }
             }
+            .special {
+                position: relative;
+                padding-left: 0;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 32px;
+                    right: -10px;
+                    width: 23px;
+                    height: 25px;
+                    background-image: url(../img/spritesheet.png);
+                    background-repeat: no-repeat;
+                    background-position: -151px -68px;
+                }
+            }
+            .basket {
+                position: relative;
+                padding-left: 0;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 32px;
+                    right: -10px;
+                    width: 28px;
+                    height: 24px;
+                    background-image: url(../img/spritesheet.png);
+                    background-repeat: no-repeat;
+                    background-position: -79px -5px;
+                }
+            }
         }
     }
 }
 
 .breadcrumb {
+    position: relative;
     display: flex;
     justify-content: center;
     background-color: #05aecc;
@@ -113,6 +144,9 @@ header {
         display: flex;
         justify-content: space-between;
         width: 946px;
+        .bread-active:hover .nav-active {
+            display: block;
+        }
         li {
             padding: 27px 0px;
             transition: 0.1s;
@@ -133,19 +167,155 @@ header {
                 transition: 0.3;
             }
         }
-    }
-    .nav-active {
-        display: none;
+        .nav-active {
+            position: absolute;
+            top: 72px;
+            display: none;
+            width: 273px;
+            background-color: white;
+            font-size: 12px;
+            color: black;
+            transition: 0.2s;
+            z-index: 1111;
+            li {
+                display: flex;
+                justify-content: space-between;
+                color: black;
+                border-bottom: 1px solid lightgray;
+                &:last-child {
+                    padding: 10px 20px;
+                    a {
+                        padding: 0;
+                        color: black;
+                        transition: 0.2s;
+                        &:hover {
+                            color: #ef5966;
+                        }
+                    }
+                }
+                img {
+                    margin-left: 20px;
+                    margin-right: 14px;
+                }
+                .info-nav {
+                    h3 {
+                        color: #ef5966;
+                        font-size: 16px;
+                    }
+                    p {
+                        margin-top: 4px;
+                        margin-bottom: 10px;
+                    }
+                    .btn {
+                        width: 117px;
+                        height: 23px;
+                        background-color: #05aecc;
+                        opacity: 1;
+                        padding: 4px 27px;
+                        color: white;
+                        opacity: 0.8;
+                        transition: 0.2s;
+                        &:hover {
+                            opacity: 1;
+                        }
+                        &:active {
+                            opacity: 0.6;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
 main {
+    .btn-present {
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 13px;
+            left: 15px;
+            width: 23px;
+            height: 25px;
+            background-image: url(../img/spritesheet.png);
+            background-repeat: no-repeat;
+            background-position: -151px -68px;
+            transition: 0.2s;
+            opacity: 0.8;
+        }
+    }
+    .btn-add {
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 15px;
+            left: 12px;
+            width: 28px;
+            height: 24px;
+            background-image: url(../img/spritesheet.png);
+            background-repeat: no-repeat;
+            background-position: -79px -5px;
+            transition: 0.2s;
+            opacity: 0.8;
+        }
+    }
+    .arrow-left {
+        position: relative;
+        margin-left: auto;
+        margin-right: 1px;
+        background-color: #05aecc;
+        cursor: pointer;
+        &:hover::after {
+            opacity: 1;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 27px;
+            left: 25px;
+            width: 15px;
+            height: 24px;
+            background-image: url(../img/spritesheet.png);
+            background-repeat: no-repeat;
+            background-position: -5px -73px;
+            transition: 0.2s;
+            opacity: 0.6;
+        }
+    }
+    .arrow-right {
+        position: relative;
+        background-color: #3c3c3c;
+        cursor: pointer;
+        &:hover::after {
+            opacity: 1;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 27px;
+            right: 25px;
+            width: 15px;
+            height: 24px;
+            background-image: url(../img/spritesheet.png);
+            background-repeat: no-repeat;
+            background-position: -86px -39px;
+            transition: 0.2s;
+            opacity: 0.6;
+        }
+    }
     .products-category {
         display: flex;
         justify-content: space-between;
         margin-bottom: 23px;
         .column {
             article {
+                img {
+                    position: relative;
+                    cursor: pointer;
+                    transition: 0.1s;
+                }
                 .up-products {
                     margin-bottom: 2px;
                 }
@@ -189,6 +359,9 @@ main {
                         &:nth-child(3) {
                             background-color: #f0626e;
                         }
+                        &:hover:after {
+                            opacity: 1;
+                        }
                     }
                 }
                 .search {
@@ -196,6 +369,18 @@ main {
                     width: 100%;
                     height: 175px;
                     background-color: #ed6370;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 60px;
+                        right: 60px;
+                        background-image: url(../img/spritesheet.png);
+                        background-repeat: no-repeat;
+                        width: 53px;
+                        height: 53px;
+                        background-position: -117px -5px;
+                        cursor: pointer;
+                    }
                     input {
                         position: absolute;
                         top: 51px;
@@ -206,6 +391,7 @@ main {
                         padding-left: 20px;
                         border: none;
                         box-shadow: 0 0 15px gray;
+                        outline: none;
                     }
                 }
             }
@@ -261,14 +447,6 @@ main {
             height: 79px;
             margin-bottom: -1px;
         }
-        .arrow-left {
-            margin-left: auto;
-            margin-right: 1px;
-            background-color: #05aecc;
-        }
-        .arrow-right {
-            background-color: #3c3c3c;
-        }
     }
     .pic {
         display: flex;
@@ -294,6 +472,9 @@ main {
                     background-color: #00a1be;
                     &:nth-child(3) {
                         background-color: #f0626e;
+                    }
+                    &:hover:after {
+                        opacity: 1;
                     }
                 }
             }
@@ -362,10 +543,40 @@ main {
                 display: flex;
                 outline: 1px solid lightgray;
                 a {
+                    position: relative;
                     display: inline-block;
                     width: 54px;
                     height: 52px;
                     margin: 0;
+                    &:hover::after {
+                        opacity: 1;
+                    }
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 19px;
+                        left: 16px;
+                        width: 19px;
+                        height: 12px;
+                        background-image: url(../img/spritesheet.png);
+                        background-repeat: no-repeat;
+                        background-position: -30px -73px;
+                        opacity: 0.7;
+                    }
+                    &:nth-child(2)::after {
+                        top: 16px;
+                        left: 19px;
+                        width: 15px;
+                        height: 17px;
+                        background-position: -28px -39px;
+                    }
+                    &:nth-child(3)::after {
+                        top: 18px;
+                        left: 19px;
+                        width: 17px;
+                        height: 15px;
+                        background-position: -52px -5px;
+                    }
                 }
                 .center {
                     outline: 1px solid lightgray;
@@ -498,10 +709,67 @@ main {
             display: flex;
             flex-direction: row;
             a {
+                position: relative;
                 width: 54px;
                 height: 54px;
-                outline: 1px solid red;
                 margin-right: 10px;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    background-image: url(../img/spritesheet.png);
+                    background-repeat: no-repeat;
+                }
+                &:first-child {
+                    background-color: #f8bc2e;
+                    &::after {
+                        top: 15px;
+                        left: 15px;
+                        width: 23px;
+                        height: 23px;
+                        background-position: -53px -39px
+                    }
+                }
+                &:nth-child(2) {
+                    background-color: #39599f;
+                    &::after {
+                        top: 13px;
+                        left: 20px;
+                        width: 13px;
+                        height: 27px;
+                        background-position: -5px -5px;
+                    }
+                }
+                &:nth-child(3) {
+                    background-color: #45b0e3;
+                    &::after {
+                        top: 15px;
+                        left: 11px;
+                        width: 31px;
+                        height: 23px;
+                        background-position: -30px -103px;
+                    }
+                }
+                &:nth-child(4) {
+                    background-color: #ffffff;
+                    outline: 1px solid lightgray;
+                    &::after {
+                        top: 20px;
+                        left: 12px;
+                        width: 30px;
+                        height: 14px;
+                        background-position: -111px -68px;
+                    }
+                }
+                &:last-child {
+                    background-color: #1872bf;
+                    &::after {
+                        top: 17px;
+                        left: 19px;
+                        width: 14px;
+                        height: 22px;
+                        background-position: -28px -5px;
+                    }
+                }
             }
         }
     }
@@ -514,5 +782,8 @@ main {
     border-bottom: 1px solid #b9b9b9;
     p {
         padding: 20px 0;
+        span {
+            color: #f0626e;
+        }
     }
 }
